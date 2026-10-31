@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Cinema Immonen
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <div class="brand">
+    CINEMA
+    <span>
+     IMMONEN
+    </span>
+   </div>
+   <nav>
+    <button class="active" data-page="overview">
+     Overview
+    </button>
+    <button data-page="collection">
+     Film Library
+    </button>
+    <button data-page="explore">
+     Explore
+    </button>
+    <button data-page="recommendations">
+     Recommendations
+    </button>
+    <button data-page="watchlist">
+     Watchlist
+    </button>
+   </nav>
+  </header>
+  <main>
+   <section class="section active" id="overview">
+    <div class="eyebrow">
+     THE COLLECTION · 2025—2026
+    </div>
+    <h1>
+     Cinema Immonen
+    </h1>
+    <div class="stats" id="stats">
+    </div>
+    <div class="twocol">
+     <div class="panel">
+      <h2>
+       Most watched directors
+      </h2>
+      <div class="sub">
+       Select a director to see their films
+      </div>
+      <div id="directorsChart">
+      </div>
+     </div>
+     <div class="panel">
+      <h2>
+       Countries &amp; regions
+      </h2>
+      <div class="sub">
+       Co-productions count toward each listed country
+      </div>
+      <div id="countriesChart">
+      </div>
+     </div>
+     <div class="panel">
+      <h2>
+       Genres &amp; themes
+      </h2>
+      <div class="sub">
+       Editorial categories; a film may appear in more than one
+      </div>
+      <div id="genresChart">
+      </div>
+     </div>
+     <div class="panel">
+      <h2>
+       Release decades
+      </h2>
+      <div class="sub">
+       Distribution of films by release year
+      </div>
+      <div id="decadesChart">
+      </div>
+     </div>
+     <div class="panel wide">
+      <h2>
+       Viewing calendar
+      </h2>
+      <div class="sub">
+       Only entries with a recorded viewing month are counted
+      </div>
+      <div id="timeline">
+      </div>
+     </div>
+     <div class="panel wide">
+      <h2>
+       Collection insights
+      </h2>
+      <div id="insights">
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="collection">
+    <div class="eyebrow">
+     ARCHIVE
+    </div>
+    <h1>
+     Film library
+    </h1>
+    <div class="filters">
+     <input id="search" placeholder="Search titles, directors, countries…"/>
+     <select id="countryFilter">
+      <option value="">
+       All countries
+      </option>
+     </select>
+     <select id="directorFilter">
+      <option value="">
+       All directors
+      </option>
+     </select>
+     <select id="genreFilter">
+      <option value="">
+       All genres
+      </option>
+     </select>
+     <select id="decadeFilter">
+      <option value="">
+       All decades
+      </option>
+     </select>
+     <select id="statusFilter">
+      <option value="">
+       All statuses
+      </option>
+      <option value="watched">
+       Watched
+      </option>
+      <option value="to-watch">
+       To Watch
+      </option>
+     </select>
+     <select id="sort">
+      <option value="title">
+       Title A–Z
+      </option>
+      <option value="newest">
+       Newest releases
+      </option>
+      <option value="oldest">
+       Oldest releases
+      </option>
+      <option value="director">
+       Director A–Z
+      </option>
+      <option value="rating">
+       Your highest ratings
+      </option>
+     </select>
+    </div>
+    <div class="viewtop">
+     <div class="sub" id="results">
+     </div>
+     <button class="utility" id="reset">
+      Clear filters
+     </button>
+    </div>
+    <div class="filmgrid" id="filmgrid">
+    </div>
+    <div class="pager" id="pager">
+    </div>
+   </section>
+   <section class="section" id="explore">
+    <div class="eyebrow">
+     FILMOGRAPHIES &amp; ORIGINS
+    </div>
+    <h1>
+     Explore the collection
+    </h1>
+    <div class="twocol">
+     <div class="panel">
+      <h2>
+       Directors
+      </h2>
+      <div id="allDirectors">
+      </div>
+     </div>
+     <div class="panel">
+      <h2>
+       Countries &amp; regions
+      </h2>
+      <div id="allCountries">
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="recommendations">
+    <div class="eyebrow">
+     CURATED FOR YOU
+    </div>
+    <h1>
+     Recommendations
+    </h1>
+    <div class="viewtop">
+     <p class="sub">
+      Ranked by overlap with your collection and ratings. Watched titles are excluded.
+     </p>
+     <button class="utility" id="refreshRecs">
+      Refresh ranking ↻
+     </button>
+    </div>
+    <div class="recommendgrid" id="recommendgrid">
+    </div>
+   </section>
+   <section class="section" id="watchlist">
+    <div class="eyebrow">
+     NEXT SCREENING
+    </div>
+    <h1>
+     Watchlist
+    </h1>
+    <div class="filmgrid" id="watchgrid">
+    </div>
+    <h2 style="margin-top:35px">
+     Recently rated
+    </h2>
+    <div class="filmgrid" id="ratedgrid">
+    </div>
+    <p class="note" style="margin-top:30px">
+     Your statuses and ratings are saved in this browser. Use Export to back them up or Import to restore them on another device.
+    </p>
+    <div class="actions">
+     <button class="utility" id="export">
+      Export my data
+     </button>
+     <button class="utility" id="importBtn">
+      Import my data
+     </button>
+     <input accept="application/json" hidden="" id="importFile" type="file"/>
+    </div>
+   </section>
+  </main>
+  <div aria-label="Film details" aria-modal="true" class="detailback" id="modal" role="dialog">
+   <div class="detail">
+    <button aria-label="Close" class="close" id="close">
+     ×
+    </button>
+    <div class="eyebrow" id="detailKind">
+    </div>
+    <h2 id="detailTitle">
+    </h2>
+    <div class="meta" id="detailMeta">
+    </div>
+    <p id="detailSummary">
+    </p>
+    <div class="note" id="detailWhy">
+    </div>
+    <div class="actions" id="detailActions">
+    </div>
+    <div class="eyebrow" style="margin-bottom:8px">
+     YOUR RATING
+    </div>
+    <div class="stars" id="stars">
+    </div>
+    <p class="note">
+     Choose any half-star increment from 0.5 to 5.
+    </p>
+    <a class="link" href="#" id="sourceLink" rel="noopener noreferrer" target="_blank">
+     Read more ↗
+    </a>
+   </div>
+  </div>
+  <div id="toast">
+  </div>
+  <script src="data.js">
+  </script>
+  <script src="app.js">
+  </script>
+ </body>
+</html>
+
